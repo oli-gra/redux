@@ -171,15 +171,13 @@ const reducers = combineReducers({
     counter: counterReducer
 })
 
-// STORE
+// const compose = composeWithDevTools({
+//     realtime: true,
+//     name: 'redux',
+//     hostname: 'localhost',
+//     port: 3000
+//   })
 
-const compose = composeWithDevTools({
-    realtime: true,
-    name: 'redux',
-    hostname: 'localhost',
-    port: 3000
-  })
-
-export default createStore(reducers, compose(
+export default createStore(reducers, 
     applyMiddleware(thunk, logger)
-))
+)

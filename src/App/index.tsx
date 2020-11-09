@@ -4,14 +4,21 @@ import React, {
   useEffect,
   useRef,
   useState
-} from "react";
+} from "react"
+// import {
+//   CreateTodoActionCreator,
+//   editTodoActionCreator,
+//   deleteTodoActionCreator,
+//   toggleTodoActionCreator,
+//   selectTodoActionCreator
+// } from '../redux_v1'
 import {
-  CreateTodoActionCreator,
+  createTodoActionCreator,
   editTodoActionCreator,
-  deleteTodoActionCreator,
   toggleTodoActionCreator,
+  deleteTodoActionCreator,
   selectTodoActionCreator
-} from '../redux_v1'
+} from '../redux_sdk'
 import { useSelector, useDispatch } from 'react-redux'
 import { State } from "../type";
 import "./App.css";
@@ -41,7 +48,7 @@ const App = function () {
     e.preventDefault();
     if (!newTodoInput.length) return
 
-    dispatch(CreateTodoActionCreator({ desc: newTodoInput }))
+    dispatch(createTodoActionCreator({ desc: newTodoInput }))
     setNewTodoInput('')
   };
 
